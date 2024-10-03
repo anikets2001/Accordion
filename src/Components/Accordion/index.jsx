@@ -11,14 +11,14 @@ const Accordion = () => {
   };
 
   const handleMultiSelection = (getCurrentId) => {
-    let cpyMutiple = [...multiple];
-    const findIndexOfCurrentId = cpyMutiple.indexOf(getCurrentId);
+    let copyMultiple = [...multiple];
+    const findIndexOfCurrentId = copyMultiple.indexOf(getCurrentId);
 
     console.log(findIndexOfCurrentId);
-    if (findIndexOfCurrentId === -1) cpyMutiple.push(getCurrentId);
-    else cpyMutiple.splice(findIndexOfCurrentId, 1);
+    if (findIndexOfCurrentId === -1) copyMultiple.push(getCurrentId);
+    else copyMultiple.splice(findIndexOfCurrentId, 1);
 
-    setMultiple(cpyMutiple);
+    setMultiple(copyMultiple);
   };
 
   return (
@@ -57,10 +57,6 @@ const Accordion = () => {
                 : selectedId === item?.id && (
                     <div className="acc-content ">{item?.answer}</div>
                   )}
-              {/* {selected === dataItem.id ||
-              multiple.indexOf(dataItem.id) !== -1 ? (
-                <div className="content">{dataItem.answer}</div>
-              ) : null} */}
             </div>
           ))
         ) : (
